@@ -32,7 +32,9 @@ export default function IndexPage(
   const [posts] = useLiveQuery<Post[]>(props.posts, postsQuery)
   return (
     <Container>
-      <section> Coming Soon</section>
+      <section>
+        <h4>Coming Soon</h4>{' '}
+      </section>
     </Container>
   )
 }
