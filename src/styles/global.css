@@ -61,6 +61,8 @@ html {
 
 body {
   margin: 0;
+  overflow: hidden;
+  height: 100vh;
 }
 
 /* Post page */
@@ -191,11 +193,18 @@ main {
   font-size: var(--font-size-3);
   line-height: var(--line-height-1);
   padding-left: var(--space-2);
+  padding-top: var(--space-2);
   margin: var(--space-3) 0;
   text-decoration: none;
   color: var(--black);
+  display: grid;
+  gap: 0.5rem;
 }
 
+.header .header__title span:last-child {
+  font-weight: 500;
+  font-size: medium;
+}
 .footer {
   display: flex;
   justify-content: flex-end;
@@ -212,7 +221,7 @@ main {
 
 @media (min-width: 575px) {
   .container {
-    max-width: var(--max-width-1);
+    /* max-width: var(--max-width-1); */
     padding: 0 var(--space-4);
   }
 
@@ -443,4 +452,17 @@ main {
     max-width: 366.5px;
     max-height: 231px;
   }
+}
+section {
+  /* padding: ; */
+  height: 100vh;
+  color: var(--white);
+  text-align: center;
+  background-color: black;
+  /* margin-top: 10px; */
+  border-radius: 20px;
+}
+section h4 {
+  padding-top: 20%;
+  font-size: 6rem;
 }
