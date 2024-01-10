@@ -49,5 +49,5 @@ studio/.env.development
 
 
 #banner
-/src/pages/studio
-/src/pages/post
+# /src/pages/studio
+# /src/pages/post
