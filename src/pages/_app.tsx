@@ -1,4 +1,4 @@
-import '~/styles/global.css'
+import '~/styles/global.scss'
 
 import type { AppProps } from 'next/app'
 import { IBM_Plex_Mono, Inter, PT_Serif } from 'next/font/google'
@@ -8,8 +8,6 @@ export interface SharedPageProps {
   draftMode: boolean
   token: string
 }
-
-const PreviewProvider = lazy(() => import('~/components/PreviewProvider'))
 
 const mono = IBM_Plex_Mono({
   variable: '--font-family-mono',
@@ -46,13 +44,14 @@ export default function App({
           }
         `}
       </style>
-      {draftMode ? (
+      <Component {...pageProps} />
+      {/* {draftMode ? (
         <PreviewProvider token={token}>
           <Component {...pageProps} />
         </PreviewProvider>
       ) : (
         <Component {...pageProps} />
-      )}
+      )} */}
     </>
   )
 }
