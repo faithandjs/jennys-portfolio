@@ -13,7 +13,7 @@ export default function Projects() {
 
   useEffect(() => {
     fetchingProjects()
-  }, [])
+  }, [fetchingProjects])
 
   console.log(data)
   return <div>Projects</div>
