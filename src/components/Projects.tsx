@@ -12,8 +12,8 @@ export default function Projects() {
   }
 
   useEffect(() => {
-    fetchingProjects()
-  }, [fetchingProjects])
+    fetchingProjects() // eslint-disable-next-line
+  }, [])
 
   console.log(data)
   return <div>Projects</div>
