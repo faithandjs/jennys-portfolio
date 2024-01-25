@@ -1,18 +1,12 @@
 const project = {
-  name: 'project',
-  title: 'Project',
+  name: 'projects',
+  title: 'Projects',
   type: 'document',
   fields: [
     {
       name: 'name',
       title: 'Name',
       type: 'string',
-    },
-    {
-      name: 'slug',
-      title: 'Slug',
-      type: 'slug',
-      options: { source: 'name' },
     },
     {
       name: 'image',
@@ -31,17 +25,6 @@ const project = {
       name: 'github',
       title: 'Github',
       type: 'url',
-    },
-    {
-      name: 'powerbi',
-      title: 'Power BI',
-      type: 'url',
-    },
-    {
-      name: 'content',
-      title: 'Content',
-      type: 'array',
-      of: [{ type: 'block' }],
     },
   ],
 }
