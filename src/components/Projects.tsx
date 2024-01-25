@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
-import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
+// import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
 
 import { getProjects } from '~/lib/sanity.queries'
 export default function Projects() {
