@@ -18,7 +18,7 @@ export default function Projects() {
 
   return (
     <div className=" text-center mx-10 sm:mx-20   mt-10 font-light">
-      <h2 className="pb-8 font-medium text-2xl">PROJECTS</h2>
+      <h2 className="pb-8 text-2xl tracking-tighter font-bold">PROJECTS</h2>
       <div className="md:max-w-[900px] mx-auto grid gap-6 lg:gap-10 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 justify-center project">
         {[...data].map((item, id) => {
           return (
