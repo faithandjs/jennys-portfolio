@@ -8,40 +8,8 @@ html {
 }
 
 body {
-  @apply bg-main text-ink;
+  @apply bg-white text-ink;
   font-family: 'Spectral', serif;
-}
-
-@media (min-width: 800px) {
-  .post .post__cover,
-  .post .post__cover--none {
-    width: 750px;
-    height: 380px;
-  }
-
-  .post .post__title {
-    font-size: var(--font-size-10);
-    line-height: var(--line-height-10);
-    margin: var(--space-6) 0 0;
-    letter-spacing: -0.025em;
-  }
-
-  .post .post__excerpt {
-    font-size: var(--font-size-5);
-    line-height: var(--line-height-5);
-    margin-top: var(--space-3);
-    margin-bottom: var(--space-3);
-  }
-
-  .post .post__date {
-    font-size: var(--font-size-3);
-    line-height: var(--line-height-2);
-    margin-top: var(--space-0);
-  }
-
-  .post .post__content {
-    margin-top: var(--space-7);
-  }
 }
 
 /* Layout */
