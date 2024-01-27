@@ -20,15 +20,15 @@ export default function Projects() {
     <div className=" text-center mx-10 sm:mx-20   mt-10 font-light">
       <h2 className="pb-8 font-medium text-2xl">PROJECTS</h2>
       <div className="md:max-w-[900px] mx-auto grid gap-6 lg:gap-10 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 justify-center project">
-        {[...data, ...data, ...data, ...data, ...data].map((item, id) => {
+        {[...data].map((item, id) => {
           return (
             <div
               key={id}
-              className="relative w-full project--card  rounded-md m-auto overflow-hidden"
+              className="relative w-full h-full project--card  rounded-md m-auto overflow-hidden "
             >
               <a href={item.github} target="_blank">
                 <img
-                  className=" w-full h-full"
+                  className=" w-full h-full object-cover"
                   src={item.image}
                   alt={item.alt}
                 />
