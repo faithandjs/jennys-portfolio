@@ -82,7 +82,7 @@ export default function Summary({
 
       {/* <div className="flex mx-auto"> */}
       <div className="sm:pb-24 sm:pt-16 py-12 border-y border-gray-300 max-w-[900px] text-center mx-auto mt-10 font-light">
-        <h2 className="sm:pb-16 pb-6 font-medium text-lg">
+        <h2 className="sm:pb-16 pb-6  text-lg tracking-tighter font-medium">
           {data.summarytitle}
         </h2>
         <div className="px-4 md:px-6 lg:px-0">
