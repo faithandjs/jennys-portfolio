@@ -66,11 +66,10 @@ export default function Summary({
                   item.name === 'email' ? `mailto:${item.data}` : `${item.data}`
                 }
                 target="_blank"
-                // className="font-light text-sm"
               >
                 <>
                   <Image
-                    className={`w-[30px] h-auto ${item.style} relative  `}
+                    className={`sm:w-8 w-7 h-auto ${item.style} relative hover:scale-105  transition-all duration-300`}
                     src={item.icon}
                     alt={item.name}
                   />
@@ -82,10 +81,14 @@ export default function Summary({
       </ul>
 
       {/* <div className="flex mx-auto"> */}
-      <div className="py-24 border-y border-gray-300 max-w-[900px] text-center mx-auto mt-10 font-light">
-        <h2 className="pb-8 font-medium text-lg">{data.summarytitle}</h2>
-        <PortableText value={data.summary} />
-        <button className="mt-9 uppercase text-sm px-7 py-3 bg-slate-500 text-white">
+      <div className="sm:pb-24 sm:pt-16 py-12 border-y border-gray-300 max-w-[900px] text-center mx-auto mt-10 font-light">
+        <h2 className="sm:pb-16 pb-6 font-medium text-lg">
+          {data.summarytitle}
+        </h2>
+        <div className="px-4 md:px-6 lg:px-0">
+          <PortableText value={data.summary} />
+        </div>
+        <button className="mt-9 uppercase text-sm px-7 py-3  relative btn bg-main text-white hover:text-main hover:tracking-widest hover:bg-transparent transition-all duration-300 border-2 border-main  ">
           Join the newsletter
         </button>
       </div>
@@ -93,3 +96,4 @@ export default function Summary({
     </div>
   )
 }
+//
