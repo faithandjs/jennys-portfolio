@@ -3,5 +3,5 @@
 
 [template.environment]
   NEXT_PUBLIC_SANITY_PROJECT_ID="Your Sanity Project Id"
-  SANITY_STUDIO_DATASET="Your Sanity Dataset"
+  NEXT_PUBLIC_SANITY_DATASET="Your Sanity Dataset"
   

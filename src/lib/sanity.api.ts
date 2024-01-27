@@ -21,8 +21,8 @@ export const apiVersion =
 export const previewSecretId: `${string}.${string}` = 'preview.secret'
 
 export const dataset = assertValue(
-  process.env.SANITY_STUDIO_DATASET ?? 'production',
-  'Missing environment variable: SANITY_STUDIO_DATASET',
+  process.env.NEXT_PUBLIC_SANITY_DATASET ?? 'production',
+  'Missing environment variable: NEXT_PUBLIC_SANITY_DATASET',
 )
 
 function assertValue<T>(v: T | undefined, errorMessage: string): T {

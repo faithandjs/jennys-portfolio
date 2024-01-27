@@ -7,5 +7,5 @@ import overview from './overview'
 
 export const schemaTypes = [post, blockContent]
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [post, blockContent, projects, overview],
+  types: [blockContent, projects, overview],
 }
