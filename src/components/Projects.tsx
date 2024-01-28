@@ -40,7 +40,11 @@ export default function Projects() {
     <div className=" text-center mx-10 sm:mx-20   mt-10 font-light">
       <h2 className="pb-10 text-2xl tracking-tight font-bold">PROJECTS</h2>
       <div
-        className={`project--container  md:max-w-[900px] w-max mx-auto grid gap-6 lg:gap-10 grid-col-1 xs:grid-col-2  justify-center  `}
+        className={`project--container  md:max-w-[900px] w-max mx-auto grid gap-6 lg:gap-10 grid-cols-1 xs:!grid-cols-${
+          data.length < 2 ? data.length : 2
+        }  sm:!grid-cols-${data.length < 3 ? data.length : 3}  md:!grid-cols-${
+          data.length < 4 ? data.length : 4
+        }  justify-center  `}
         ref={project}
       >
         {[...data].map((item, id) => {

@@ -15,8 +15,8 @@ body {
   margin: 0 auto;
 }
 .project--container {
-  grid-template-columns: repeat(auto-fill, 1fr);
-  // background: #000;
+  @apply grid-cols-1 xs:grid-cols-2;
+  // sm:grid-cols-3 md:grid-cols-4;
 }
 
 .project--card:hover {
