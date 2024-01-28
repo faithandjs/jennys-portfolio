@@ -77,7 +77,7 @@ export default function IndexPage() {
   }, [])
   return (
     <div>
-      <header className="  z-10  left-0  ">
+      <header className="  z-10  left-0  overflow-x-hidden">
         <div className=" text-sm sm:px-6 sm:pt-4 p-4 md:my-3 grid gap-1 absolute top-0 left-0 z-10  name opacity-0">
           <span className="font-extrabold sm:text-2xl">Jennifer Chinabu</span>
           <span className="font-medium sm:text-lg">Data Scientist</span>
