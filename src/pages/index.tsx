@@ -35,7 +35,7 @@ export default function IndexPage() {
         element.innerHTML = replacedText
       })
 
-      const tl = gsap.timeline({ repeat: -1, delay: 1.8 })
+      const tl = gsap.timeline({ repeat: -1, delay: 0.5 })
       tl.staggerFrom(
         '.banner-text span',
         0.5,
@@ -77,13 +77,13 @@ export default function IndexPage() {
   }, [])
   return (
     <div>
-      <header className="  z-10  left-0  overflow-x-hidden">
+      <header className="  z-10  left-0  ">
         <div className=" text-sm sm:px-6 sm:pt-4 p-4 md:my-3 grid gap-1 absolute top-0 left-0 z-10  name opacity-0">
           <span className="font-extrabold sm:text-2xl">Jennifer Chinabu</span>
           <span className="font-medium sm:text-lg">Data Scientist</span>
         </div>
-        <div className=" absolute top-[20%] left-1/2 translate-x-[-50%] z-10 w-full banner-text text-center">
-          <span className="md:text-2xl text-base  px-2 my-3 grid gap-2  ">
+        <div className=" absolute top-[20%] left-1/2 translate-x-[-50%] z-10 w-screen overflow-x-hidden banner-text text-center">
+          <span className="md:text-2xl text-base  px-2 my-3 grid gap-2 tracking-tight sm:tracking-normal ">
             {data.bannertext}
           </span>
         </div>
