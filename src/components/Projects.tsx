@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 import { getProjects } from '~/lib/sanity.queries'
 
 export default function Projects() {
   const [data, setData] = useState([])
+  const project = useRef<HTMLDivElement>(null)
 
   const fetchingProjects = async () => {
     const data = await getProjects()
@@ -13,24 +14,40 @@ export default function Projects() {
   useEffect(() => {
     if (Object.values(data).length === 0) {
       fetchingProjects()
+    } else {
+      // if (data.length >= 4) return
+      // if (window.matchMedia('(min-width: 768px)').matches) {
+      //   project.current.style.gridTemplateColumns = `repeat(${
+      //     data.length < 4 ? data.length : 4
+      //   }, 1fr)`
+      // } else if (window.matchMedia('(min-width: 640px)').matches) {
+      //   project.current.style.gridTemplateColumns = `repeat(${
+      //     data.length < 3 ? data.length : 3
+      //   }, 1fr)`
+      // } else if (window.matchMedia('(min-width: 425px)').matches) {
+      //   project.current.style.gridTemplateColumns = `repeat(${
+      //     data.length < 2 ? data.length : 2
+      //   }, 1fr)`
+      // } else {
+      //   project.current.style.gridTemplateColumns = `repeat(${
+      //     data.length < 1 ? data.length : 1
+      //   }, 1fr)`
+      // }
     } // eslint-disable-next-line
   }, [data])
-
+  // sm:grid-cols-3 md:grid-cols-4
   return (
     <div className=" text-center mx-10 sm:mx-20   mt-10 font-light">
       <h2 className="pb-10 text-2xl tracking-tight font-bold">PROJECTS</h2>
       <div
-        className={`md:max-w-[900px] w-max mx-auto grid gap-6 lg:gap-10 grid-cols-${
-          data.length < 2 ? data.length : 2
-        }  sm:grid-cols-${data.length < 3 ? data.length : 3}  md:grid-cols-${
-          data.length < 4 ? data.length : 4
-        } justify-center project`}
+        className={`project--container  md:max-w-[900px] w-max mx-auto grid gap-6 lg:gap-10 grid-col-1 xs:grid-col-2  justify-center  `}
+        ref={project}
       >
         {[...data].map((item, id) => {
           return (
             <div
               key={id}
-              className="relative w-full h-full project--card  rounded-md m-auto overflow-hidden max-w-[200px]"
+              className="relative w-full h-full project--card  rounded-md m-auto overflow-hidden sm:max-w-[200px] max-w-[150px]"
             >
               <a href={item.github} target="_blank">
                 <img
