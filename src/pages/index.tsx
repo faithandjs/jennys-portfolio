@@ -25,29 +25,29 @@ export default function IndexPage() {
     if (Object.values(data).length === 0) {
       fetchingOverview()
     } else {
-      var textWrapper = document.querySelector('.banner-text')
-      textWrapper.innerHTML = textWrapper.textContent.replace(
-        /\S/g,
-        "<span class='letter'>$&</span>",
-      )
+      const bannerText = document.querySelectorAll('.banner-text span')
+      bannerText.forEach((element) => {
+        const textContent = element.textContent || ''
+        const replacedText = textContent.replace(
+          /([^\x00-\x80]|\w)/g,
+          "<span class='_text3'>$&</span>",
+        )
+        element.innerHTML = replacedText
+      })
 
-      const tl = gsap.timeline()
+      const tl = gsap.timeline({ repeat: -1, delay: 1.8 })
       tl.staggerFrom(
-        '.banner-text .letter',
-        1.5,
-        {
-          opacity: 0,
-          ease: 'Power4.easeInOut',
-        },
-        0.15,
-        0.2,
+        '.banner-text span',
+        0.5,
+        { alpha: 0, x: 40, ease: 'Power1.easeOut' },
+        0.1,
+      ).staggerTo(
+        '.banner-text span',
+        0.5,
+        { alpha: 0, x: -40, ease: 'Power1.easeOut ', delay: 15 },
+        0.1,
+        '+=1.5',
       )
-      // gsap.to('.banner-text', {
-      //   duration: 5,
-      //   repeat: -1,
-      //   text: { value: data.bannertext, delimiter: '' },
-      //   repeatDelay: 10,
-      // })
     }
 
     // eslint-disable-next-line
@@ -82,10 +82,15 @@ export default function IndexPage() {
           <span className="font-extrabold sm:text-2xl">Jennifer Chinabu</span>
           <span className="font-medium sm:text-lg">Data Scientist</span>
         </div>
-        <span className="md:text-2xl lowercase text-base text-center px-2 my-3 grid gap-2 absolute top-[20%] left-1/2 translate-x-[-50%] z-10 w-full banner-text "></span>
+        <div className=" absolute top-[20%] left-1/2 translate-x-[-50%] z-10 w-full banner-text text-center">
+          <span className="md:text-2xl text-base  px-2 my-3 grid gap-2  ">
+            {data.bannertext}
+          </span>
+        </div>
+
         <div className="w-screen md:h-[60vh] h-[50vh] relative bg-white ">
           <Image
-            className="w-full h-full object-cover object-center brightness-95 banner opacity-0 "
+            className="w-full h-full object-cover sm:object-center object-top brightness-95 banner opacity-0 "
             src={banner}
             alt="a cluster of penguis in a marshy area"
           />
