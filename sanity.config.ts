@@ -31,8 +31,8 @@ const iframeOptions = {
 
 export default defineConfig({
   basePath: '/studio',
-  name: 'zico-apartments',
-  title: 'zico-apartments',
+  name: 'jennys-portfolio',
+  title: 'jennys-portfolio',
   projectId,
   dataset,
   schema,

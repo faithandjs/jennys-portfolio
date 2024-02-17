@@ -7,8 +7,8 @@ module.exports = {
         xs: '425px',
       },
       colors: {
-        main: '#8A7B56',
-        ink: '#555555',
+        main: '#71838f',
+        ink: '#131212',
       },
     },
   },
