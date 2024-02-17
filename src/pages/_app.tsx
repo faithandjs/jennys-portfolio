@@ -1,57 +1,42 @@
-import '~/styles/global.scss'
+import '~/styles/index.scss'
+
+import '@mantine/core/styles.css'
+import '@mantine/carousel/styles.css'
+import '@mantine/dates/styles.css'
 
 import type { AppProps } from 'next/app'
-import { IBM_Plex_Mono, Inter, PT_Serif } from 'next/font/google'
-import { lazy } from 'react'
+import Head from 'next/head'
+import { MantineProvider } from '@mantine/core'
+import Layout from '~/components/layout'
+import { usePathname } from 'next/navigation'
 
 export interface SharedPageProps {
   draftMode: boolean
   token: string
 }
 
-const mono = IBM_Plex_Mono({
-  variable: '--font-family-mono',
-  subsets: ['latin'],
-  weight: ['500', '700'],
-})
-
-const sans = Inter({
-  variable: '--font-family-sans',
-  subsets: ['latin'],
-  weight: ['500', '700', '800'],
-})
-
-const serif = PT_Serif({
-  variable: '--font-family-serif',
-  style: ['normal', 'italic'],
-  subsets: ['latin'],
-  weight: ['400', '700'],
-})
-
 export default function App({
   Component,
   pageProps,
 }: AppProps<SharedPageProps>) {
-  const { draftMode, token } = pageProps
+  const pathname = usePathname()
+  const paths = ['/', '/listings']
+
   return (
     <>
-      <style jsx global>
-        {`
-          :root {
-            --font-family-sans: ${sans.style.fontFamily};
-            --font-family-serif: ${serif.style.fontFamily};
-            --font-family-mono: ${mono.style.fontFamily};
-          }
-        `}
-      </style>
-      <Component {...pageProps} />
-      {/* {draftMode ? (
-        <PreviewProvider token={token}>
+      <Head>
+        <title>Zico Apartments</title>
+        <meta name="description" content=" " />
+      </Head>
+      <MantineProvider>
+        {paths.includes(pathname) ? (
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        ) : (
           <Component {...pageProps} />
-        </PreviewProvider>
-      ) : (
-        <Component {...pageProps} />
-      )} */}
+        )}
+      </MantineProvider>
     </>
   )
 }

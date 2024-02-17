@@ -1,0 +1,17 @@
+@mixin after($w: 100%, $h: 100%, $t: 0, $b: 0, $l: 0, $r: 0) {
+  content: '';
+  position: absolute;
+  left: $l;
+  right: $r;
+  top: $t;
+  bottom: $b;
+  width: $w;
+  height: $h;
+}
+
+@mixin display($flex: flex, $justify: center, $align: center, $gap: 1rem) {
+  display: $flex;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}
