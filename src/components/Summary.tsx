@@ -88,9 +88,14 @@ export default function Summary({
         <div className="px-4 md:px-6 lg:px-0">
           <PortableText value={data.summary} />
         </div>
-        <button className="mt-9 uppercase text-sm px-7 py-3  relative btn bg-main text-white hover:text-main hover:tracking-widest hover:bg-transparent transition-all duration-300 border-2 border-main  ">
-          Join the newsletter
-        </button>
+        <div className="mt-9">
+          <a
+            href={data.medium}
+            className=" uppercase text-sm px-7 py-3  relative btn bg-main text-white hover:text-main hover:tracking-widest hover:bg-transparent transition-all duration-300 border-2 border-main  "
+          >
+            Join the newsletter
+          </a>
+        </div>
       </div>
       {/* </div> */}
     </div>
